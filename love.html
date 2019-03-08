@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <title>爱你的形状</title>
+    <style>
+    /* #love{
+        text-align: center;
+    }
+    canvas{
+        margin: 100px auto;
+    } */
+    </style>
+<script>
+function draw(id)
+{
+	var canvas = document.getElementById(id);
+	var context = canvas.getContext('2d');
+	context.fillStyle = "#EEEEFF";
+	context.fillRect(0,0,150,150);
+	context.beginPath();
+	context.fillStyle = '#f00';
+	context.strokeStyle = '#f00';
+	context.moveTo(75,40);
+	context.bezierCurveTo(74,37,70,25,50,25);
+	context.bezierCurveTo(20,25,20,62.5,20,62.5);
+	context.bezierCurveTo(20,80,40,102,75,120);
+	context.bezierCurveTo(110,102,130,80,130,62.5);
+	context.bezierCurveTo(130,62.5,130,25,100,25);
+	context.bezierCurveTo(85,25,75,37,75,40);
+	context.fill();
+	context.stroke();
+}
+context.closePath();
+</script>
+</head>
+<body onload="draw('canvas');">
+    <div id="love">
+        <h2 style="color:brown;font-family:Cambria, Cochin, 
+        Georgia, Times, 'Times New Roman', serif;">送给常小南鹏友</h2>
+        <canvas id="canvas" width="600" height="500"/>
+    </div>
+   
+</body>
+</html>

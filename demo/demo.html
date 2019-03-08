@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../jquery-1.10.1.min.js"></script>
+    <style type="text/css">
+       .mask {       
+            position: absolute; top: 0px; filter: alpha(opacity=60); background-color: #777;     
+            z-index: 1002; left: 0px;     
+            opacity:0.5; -moz-opacity:0.5;     
+        }  
+        .specs{
+            width:80%;
+            height: 80%;
+            background:#fff;
+            /* display: none; */
+            border-radius: 20px;
+            box-shadow: #777;
+            position:fixed;
+            top:10%;
+            left:10%;
+            right:10%;
+            bottom:10%;
+        }
+		.sp{
+			text-align: center;
+			color:green;
+		}
+		
+    </style>
+    <title>遮罩弹窗</title>
+    
+</head>
+<body>
+    <div id="mask" class="mask">
+        <div class="specs">
+            <div class="sp">1</div>
+            <div class="sp">2</div>
+            <div class="sp">3</div>
+            <div class="sp">4</div>
+        </div>
+    </div>    
+    <a href="javascript:;" onclick="showMask()" >点我显示遮罩层</a><br />  
+</body>
+<script type="text/javascript">     
+    //兼容火狐、IE8   
+    //显示遮罩层    
+    function showMask(){     
+        
+        $(".spesc").css("display","block");
+        $("#mask").css("height",$(document).height());     
+        $("#mask").css("width",$(document).width());     
+        $("#mask").show();     
+    }  
+    //隐藏遮罩层  
+    function hideMask(){     
+          
+        $("#mask").hide();     
+    }  
+     
+</script>
+</html>

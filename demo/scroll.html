@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tabscroll</title>
+    <style>
+    body{
+        margin:0;
+        padding:0;
+        position:relative;
+    }
+    ul{
+        position:fixed;
+        top:0;
+        left:0;
+        padding:0;
+        background:#f4f4f4;
+    }
+    li{
+        width:100px;
+        display: block;
+        height:45px;
+        line-height:45px;
+        text-align:ceter;
+    }
+    li a{
+        width:100px;
+        display: block;
+        height:45px;
+        text-decoration: none;
+        color:#666;
+        font-size:16px;
+    }
+    .ac{
+        background:rgb(173, 133, 133);
+        color:aqua;
+
+    }
+    .content{
+        position:absolute;
+        top:0px;
+        right:0px;
+        overflow:auto;
+        width:275px;
+    }
+    .content>*{
+        width:200px;
+    }
+    #menu1{
+        height:300px;
+        background:#58bc;
+    }
+    #menu2{
+        height:300px;
+        background:rgba(110, 152, 194, 0.8);
+    }
+    #menu3{
+        height:300px;
+        background:rgba(14, 49, 83, 0.8);
+    }
+    #menu4{
+        height:300px;
+        background:rgba(2, 19, 36, 0.8);
+    }
+    #menu5{
+        height:300px;
+        background:rgba(132, 194, 51, 0.8);
+    }
+    #menu6{
+        height:300px;
+        background:rgba(148, 21, 127, 0.8);
+    }
+    #menu7{
+        height:300px;
+        background:rgba(16, 13, 168, 0.8);
+    }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="ac"><a href="#menu1">menu1</a></li>
+        <li><a href="#menu2">menu2</a></li>
+        <li><a href="#menu3">menu3</a></li>
+        <li><a href="#menu4">menu4</a></li>
+        <li><a href="#menu5">menu5</a></li>
+        <li><a href="#menu6">menu6</a></li>
+        <li><a href="#menu7">menu7</a></li>
+    </ul>
+
+    <div class="content">
+        <div id="menu1">content1</div>
+        <div id="menu2">content2</div>
+        <div id="menu3">content3</div>
+        <div id="menu4">content4</div>
+        <div id="menu5">content5</div>
+        <div id="menu6">content6</div>
+        <div id="menu7">content7</div>
+        <div style="height:800px" ></div>
+    </div>
+    <script src="../jquery-1.10.1.min.js"></script>
+    <script>
+    $('ul li').click(function(){
+        $(this).addClass('ac').siblings().removeClass('ac');
+    });
+    
+    window.onscroll=function(){
+
+                  
+
+var top=$(document).scrollTop();
+
+ // alert(top);       
+
+if(top>0 && top<=100){
+
+    $('ul li').removeClass('ac');
+
+    $('ul li').eq(0).addClass('ac');
+
+}
+
+if(top>100 && top<400){
+
+    $('ul li').removeClass('ac');
+
+    $('ul li').eq(1).addClass('ac');
+
+}
+
+if(top>400 && top<700){
+
+    $('ul li').removeClass('ac');
+
+    $('ul li').eq(2).addClass('ac');
+
+
+
+}
+
+if(top>700 && top<1000){
+
+    $('ul li').removeClass('ac');
+
+    $('ul li').eq(3).addClass('ac');
+
+
+
+}
+
+if(top>1000 && top<1300){
+
+    $('ul li').removeClass('ac');
+
+    $('ul li').eq(4).addClass('ac');
+
+}
+
+if(top>1300 && top<1600){
+
+$('ul li').removeClass('ac');
+
+$('ul li').eq(5).addClass('ac');
+
+}
+if(top>1600 && top<1900){
+
+$('ul li').removeClass('ac');
+
+$('ul li').eq(6).addClass('ac');
+
+}
+if(top>2000){
+
+    $('ul li').removeClass('ac');
+
+    $('ul li').eq(7).addClass('ac');
+
+}
+
+}
+    
+    
+    </script>
+</body>
+</html>

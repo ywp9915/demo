@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body{
+        position:relative;
+    }
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    .dialog{
+        position: absolute;
+        left:35%;
+        border:1px solid #ccc;
+        width:35%;
+        height:150px;
+        display: none;
+        
+    }
+    .dia{
+        display: flex;
+        flex-direction: column;
+    }
+    .dia>*{
+        flex:1;
+        margin-left:10px;
+        line-height: 50px;
+        
+    }
+    .main{
+        color:#666;
+        font-size:14px;
+    }
+    .btn{
+        text-align: right;
+    }
+    .btn>input{
+        width:50px;
+        height:30px;
+        font-size:12px;
+        text-align: center;
+        border:none;
+        outline: none;
+        color:#aaa;
+        margin-right:15px;
+        border-radius:1px;
+    }
+    .active{
+        background:rgb(44, 73, 238);
+        color:#fff;
+    }
+    </style>
+    <script src="../jquery-1.10.1.min.js"></script>
+</head>
+<body>
+    <input type="button" value="Happy Valentine's Day?" onclick="happy()">
+    <input type="button" value="diy a confirm" onclick="diy()">
+    <div class="dialog">
+        <div class="dia">
+        <div class="title">2019快乐！</div>
+        <div class="main">
+            小猪佩奇祝大家诸事顺利！
+        </div>
+        <div class="btn">
+            <input type="button" value="YES" class="yes active">
+            <input type="button" value="NO" class="no">
+        </div>
+    </div>
+    </div>
+    <script>
+        function happy(){
+            var r=confirm("没有情人的情人节你快乐？");
+            if(r==true){
+                alert("快乐呀！不需要对象");
+
+            }else{
+                alert("赐给你一个对象");
+            }
+            
+        }
+    var mask=true;
+    function diy(){
+        if(mask){
+        $(".dialog").show();
+        }
+        mask=!mask;
+    }
+    $(".dialog").on("click",".yes",function(){
+        $(".dialog").hide();
+        alert("happy!");
+        // $(".no").attr("class",".no");
+        $(".yes").attr("class","active");
+        
+    })
+    $(".dialog").on("click",".no",function(){
+        $(".dialog").hide();
+        alert("unhappy!");
+        // $(".yes").attr("class",".yes");
+        $(".no").attr("class","active");
+        
+    })
+    </script>
+</body>
+</html>
